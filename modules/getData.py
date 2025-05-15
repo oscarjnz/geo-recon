@@ -7,6 +7,7 @@ import os
 def getGeo(syA1):
     r = requests.get('http://ip-api.com/json/'+syA1)
     response = json.loads(r.text)
+    maps_url = f"https://www.google.com/maps?q={data['lat']},{data['lon']}"
 
     #Iterate the data, filter & print ( data for specific fields
     print ( "\n" + Fore.YELLOW + "[*] Running Geo-location Check Against"+ " " + sys.argv[1] + "\n") 
@@ -18,3 +19,4 @@ def getGeo(syA1):
     print ( "Latitude: ", response["lat"])
     print ( "ISP: "+ response["isp"] + "\n") 
     print ( Fore.GREEN + "[*] Geo-IP Lookup Complete!!!" + "\n")
+    print(Fore.LIGHTCYAN_EX + f"\nLocation: {maps_url}\n")

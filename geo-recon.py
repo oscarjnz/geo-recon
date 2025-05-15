@@ -43,6 +43,8 @@ if (len(sys.argv) > 1):
             os.system('clear')
             welcome()
             help(syA1)
+            maps_url = f"https://www.google.com/maps?q={data['lat']},{data['lon']}"
+            print(Fore.LIGHTCYAN_EX + f"\nLocation: {maps_url}\n")
 
          elif syA1 == '-b' or syA1 == '--banner':
             os.system('clear')            
